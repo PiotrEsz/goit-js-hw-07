@@ -3,7 +3,7 @@ import { galleryItems } from "./gallery-items.js";
 
 const gallery = document.querySelector("div.gallery");
 
-const imgGalleryMarker = galleryItems
+const items = galleryItems
   .map(
     (image) =>
       `<div class="gallery__item"> 
@@ -19,7 +19,7 @@ const imgGalleryMarker = galleryItems
   .join("");
 console.log(galleryItems);
 
-gallery.insertAdjacentHTML("afterbegin", imgGalleryMarker);
+gallery.insertAdjacentHTML("afterbegin", items);
 
 const largeImage = (e) => {
   const originalImage = e.target.dataset.source;
