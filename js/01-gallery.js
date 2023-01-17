@@ -1,30 +1,30 @@
 import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 
-// console.log(galleryItems);
 const gallery = document.querySelector("div.gallery");
 
-const imgGalleryMarkup = galleryItems
+const imgGalleryMarker = galleryItems
   .map(
-    (img) =>
+    (image) =>
       `<div class="gallery__item"> 
-            <a class="gallery__link" href="${img.original}">
+            <a class="gallery__link" href="${image.original}">
                 <img class="gallery__image"
-                src="${img.preview}"
-                data-source="${img.original}"
-                alt="${img.description}"
+                src="${image.preview}"
+                data-source="${image.original}"
+                alt="${image.description}"
                 />
             </a>
     </div>`
   )
   .join("");
+console.log(galleryItems);
 
-gallery.insertAdjacentHTML("afterbegin", imgGalleryMarkup);
+gallery.insertAdjacentHTML("afterbegin", imgGalleryMarker);
 
 const largeImage = (e) => {
-  const originalImg = e.target.dataset.source;
+  const originalImage = e.target.dataset.source;
   basicLightbox
-    .create(`<img  src="${originalImg}">	`, {
+    .create(`<img  src="${originalImage}">	`, {
       onShow: (instance) => {
         document.addEventListener("keydown", (event) => {
           if (event.key === "Escape") {

@@ -1,24 +1,24 @@
 import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 
-// console.log(galleryItems);
 const gallery = document.querySelector("div.gallery");
 
-const imgGalleryMarkup = galleryItems
+const imgGalleryMarker = galleryItems
   .map(
-    (img) =>
+    (image) =>
       `<div class="gallery__item"> 
-    <a class="gallery__link" href="${img.original}">
+    <a class="gallery__link" href="${image.original}">
     <img class="gallery__image"
-    src="${img.preview}"
-    alt="${img.description}"
+    src="${image.preview}"
+    alt="${image.description}"
     />
     </a>
     </div>`
   )
   .join("");
+console.log(galleryItems);
 
-gallery.insertAdjacentHTML("afterbegin", imgGalleryMarkup);
+gallery.insertAdjacentHTML("afterbegin", imgGalleryMarker);
 
 let lightbox = new SimpleLightbox(".gallery a", {
   captionsData: "alt",
